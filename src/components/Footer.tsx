@@ -56,7 +56,6 @@ export default function Footer() {
           <p className="text-[0.65rem] sm:text-xs text-white/25">
             &copy; {new Date().getFullYear()} Parka.Atelier Inc. All rights reserved.
           </p>
-          <span className="text-[0.65rem] sm:text-xs text-white/25">🇨🇦 Handcrafted in Canada</span>
         </div>
       </div>
     </footer>
