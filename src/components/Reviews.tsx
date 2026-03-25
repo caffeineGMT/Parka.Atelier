@@ -21,7 +21,7 @@ const REVIEWS = [
     name: "Priya K.",
     location: "Montreal, QC",
     rating: 5,
-    text: "Perfect fit on my Langford Parka. The universal snap system works flawlessly. Wish I'd found Parka Atelier sooner.",
+    text: "Perfect fit on my Langford Parka. The universal snap system works flawlessly. Wish I'd found Parka.Atelier sooner.",
     product: "Prestige",
   },
   {

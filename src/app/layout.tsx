@@ -4,8 +4,8 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://parka-atelier.vercel.app"),
   title: {
-    default: "Parka Atelier - Premium Fur Hood Replacements",
-    template: "%s | Parka Atelier",
+    default: "Parka.Atelier - Premium Fur Hood Replacements",
+    template: "%s | Parka.Atelier",
   },
   description:
     "Premium fur hood replacements for luxury parkas. Handcrafted in Canada.",

@@ -24,7 +24,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <h3 className="font-display text-lg font-semibold tracking-[0.15em] uppercase mb-4">
-              Parka Atelier
+              Parka.Atelier
             </h3>
             <p className="text-sm text-white/40 max-w-sm leading-relaxed">
               Premium fur hood replacements, handcrafted in Canada. Engineered for luxury parkas worldwide.
@@ -70,7 +70,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/10 mt-10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/25">
-            &copy; {new Date().getFullYear()} Parka Atelier Inc. All rights reserved.
+            &copy; {new Date().getFullYear()} Parka.Atelier Inc. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <span className="text-xs text-white/25">🇨🇦 Handcrafted in Canada</span>

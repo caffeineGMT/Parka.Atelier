@@ -92,7 +92,7 @@ export default function ProductShowcase() {
               <div className="relative aspect-[4/5] img-hover-zoom bg-[var(--color-light-gray)]">
                 <Image
                   src={product.image}
-                  alt={`Parka Atelier ${product.name}`}
+                  alt={`Parka.Atelier ${product.name}`}
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 33vw"

@@ -18,7 +18,7 @@ export default function Nav() {
       <nav className="bg-black/80 backdrop-blur-xl border-b border-white/10 text-white">
         <div className="container-main flex items-center justify-between h-14">
           <Link href="/" className="font-display text-lg font-semibold tracking-[0.1em] uppercase">
-            Parka Atelier
+            Parka.Atelier
           </Link>
 
           {/* Desktop */}
