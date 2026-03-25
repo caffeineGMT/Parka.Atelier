@@ -1,38 +1,40 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 
 const STEPS = [
   {
     num: "01",
-    title: "Choose Your Fur",
-    desc: "Select from three tiers of premium, ethically sourced coyote fur — each handpicked for quality and density.",
-    icon: (
-      <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
-      </svg>
-    ),
+    subtitle: "Perfect Compatibility",
+    title: "Select Your Model",
+    body: "Choose your parka model from our compatibility guide. Each hood is precision-cut to match your jacket's specific hood geometry — no guesswork, no gaps.",
+    image: "/images/step-select.webp",
+    imageAlt: "Selecting compatible jacket model",
   },
   {
     num: "02",
-    title: "We Craft It",
-    desc: "Our artisans hand-sew each hood replacement with reinforced stitching and our universal snap-lock system.",
-    icon: (
-      <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" />
-      </svg>
-    ),
+    subtitle: "Your Signature",
+    title: "Choose Your Fur",
+    body: "Select from Natural Coyote, Shadow Coyote, or rare Ivory Coyote. Each pelt is hand-graded for density, lustre, and guard-hair alignment before production.",
+    image: "/images/step-fur.webp",
+    imageAlt: "Selecting fur colour variant",
   },
   {
     num: "03",
-    title: "Snap & Wear",
-    desc: "Attaches in seconds to any parka — Canada Goose, Moose Knuckles, Mackage, and more. No tools needed.",
-    icon: (
-      <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
-        <polyline points="22 4 12 14.01 9 11.01" />
-      </svg>
-    ),
+    subtitle: "Three-Minute Install",
+    title: "Snap & Secure",
+    body: "Our proprietary snap-lock system attaches to your jacket's existing snap points in under three minutes. No tools, no modifications, no permanent changes.",
+    image: "/images/step-snap.webp",
+    imageAlt: "Installing fur hood onto jacket",
+  },
+  {
+    num: "04",
+    subtitle: "Uncompromising Performance",
+    title: "Experience the Warmth",
+    body: "The dual-layer fur structure — long guard hairs over dense underfur — creates a wind-blocking microclimate around your face that performs flawlessly at −40°C.",
+    image: "/images/step-wear.webp",
+    imageAlt: "Wearing fur hood in extreme cold",
   },
 ];
 
@@ -44,52 +46,87 @@ export default function HowItWorks() {
       (entries) => {
         entries.forEach((e) => {
           if (e.isIntersecting) {
-            e.target.querySelectorAll(".reveal").forEach((el) => el.classList.add("is-visible"));
+            e.target.classList.add("is-visible");
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
     );
-    if (ref.current) observer.observe(ref.current);
+    if (ref.current) {
+      ref.current.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+    }
     return () => observer.disconnect();
   }, []);
 
   return (
     <section id="how-it-works" ref={ref} className="section-padding bg-white">
       <div className="container-main">
-        <div className="text-center mb-20 reveal">
+        {/* Header */}
+        <div className="text-center mb-20 md:mb-28 reveal">
           <p className="text-[0.7rem] font-medium tracking-[0.2em] uppercase text-[var(--color-mid-gray)] mb-5">
-            Simple Process
+            The Process
           </p>
-          <h2 className="font-display text-section-title font-semibold text-[var(--color-charcoal)]">
+          <h2 className="text-section-title font-semibold text-[var(--color-charcoal)]">
             How It Works
           </h2>
+          <p className="text-[var(--color-mid-gray)] mt-5 max-w-lg mx-auto leading-relaxed">
+            From selection to installation, the entire process is designed to be
+            effortless — because your time is as valuable as your jacket.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 lg:gap-20">
-          {STEPS.map((step, i) => (
-            <div
-              key={step.num}
-              className="reveal text-center"
-              style={{ transitionDelay: `${i * 150}ms` }}
-            >
-              <div className="w-16 h-16 mx-auto mb-8 flex items-center justify-center rounded-2xl bg-[var(--color-off-white)] text-[var(--color-charcoal)]">
-                {step.icon}
+        {/* Steps — alternating layout */}
+        <div className="space-y-24 md:space-y-32">
+          {STEPS.map((step, i) => {
+            const isEven = i % 2 === 0;
+            return (
+              <div
+                key={step.num}
+                className="reveal grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+              >
+                {/* Image */}
+                <div className={`relative ${isEven ? "lg:order-1" : "lg:order-2"}`}>
+                  <div className="relative aspect-[4/3] rounded-2xl overflow-hidden img-hover-zoom bg-[var(--color-off-white)]">
+                    <Image
+                      src={step.image}
+                      alt={step.imageAlt}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                    />
+                  </div>
+                  {/* Step number watermark */}
+                  <span
+                    className="absolute -top-4 -left-2 md:-top-8 md:-left-4 text-[5rem] md:text-[8rem] font-light leading-none text-[var(--color-light-gray)] select-none pointer-events-none"
+                  >
+                    {step.num}
+                  </span>
+                </div>
+
+                {/* Text */}
+                <div className={`${isEven ? "lg:order-2" : "lg:order-1"}`}>
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-8 h-px bg-[var(--color-red)]" />
+                    <span className="text-[0.65rem] font-medium tracking-[0.2em] uppercase text-[var(--color-red)]">
+                      Step {step.num}
+                    </span>
+                  </div>
+
+                  <p className="text-[0.7rem] font-medium tracking-[0.15em] uppercase text-[var(--color-mid-gray)] mb-3">
+                    {step.subtitle}
+                  </p>
+
+                  <h3 className="text-2xl md:text-3xl font-semibold text-[var(--color-charcoal)] mb-6 tracking-tight">
+                    {step.title}
+                  </h3>
+
+                  <p className="text-[var(--color-mid-gray)] leading-relaxed text-[1.05rem]">
+                    {step.body}
+                  </p>
+                </div>
               </div>
-
-              <p className="text-[0.65rem] font-medium tracking-[0.2em] uppercase text-[var(--color-red)] mb-4">
-                Step {step.num}
-              </p>
-
-              <h3 className="font-display text-xl font-semibold text-[var(--color-charcoal)] mb-4">
-                {step.title}
-              </h3>
-
-              <p className="text-sm text-[var(--color-mid-gray)] leading-relaxed max-w-xs mx-auto">
-                {step.desc}
-              </p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

@@ -27,10 +27,6 @@ export default function Nav() {
             ))}
           </div>
 
-          <a href="#shop" className="hidden md:inline-flex btn-warm !py-2 !px-5 !text-[0.7rem]">
-            Shop Now
-          </a>
-
           {/* Mobile toggle */}
           <button onClick={() => setOpen(!open)} className="md:hidden p-2" aria-label="Menu">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -52,9 +48,6 @@ export default function Nav() {
                   {item}
                 </a>
               ))}
-              <a href="#shop" onClick={() => setOpen(false)} className="btn-warm w-full mt-2">
-                Shop Now
-              </a>
             </div>
           </div>
         )}
