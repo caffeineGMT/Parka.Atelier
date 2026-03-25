@@ -31,10 +31,6 @@ const FAQS = [
     q: "How can I contact you?",
     a: "You can reach us at hello@parka-atelier.com. We typically respond within 24 hours on business days. You can also DM us on Instagram @parka.atelier for quick questions.",
   },
-  {
-    q: "Are you on Instagram?",
-    a: "Yes! Follow us @parka.atelier on Instagram for styling inspiration, behind-the-scenes looks at our workshop, customer photos, and new collection announcements.",
-  },
 ];
 
 function FAQItem({ q, a }: { q: string; a: string }) {
