@@ -4,28 +4,40 @@ import { useState, useEffect, useRef } from "react";
 
 const FAQS = [
   {
-    q: "Will it fit my parka?",
-    a: "Yes. Our universal snap-lock system is engineered to fit all major brands \u2014 Canada Goose, Moose Knuckles, Mackage, Nobis, Parajumpers, and more. If your parka has hood snap buttons, it will work.",
-  },
-  {
-    q: "What kind of fur do you use?",
-    a: "We use ethically sourced, Grade A+ Canadian coyote fur. Every piece is hand-selected for density, softness, and natural color. Our Prestige tier uses rare Grade S ivory coyote fur.",
-  },
-  {
-    q: "How long does shipping take?",
-    a: "Standard shipping takes 7\u201314 business days worldwide. Express shipping (2\u20135 days) is available for Signature and Prestige tiers.",
-  },
-  {
-    q: "What\u2019s your return policy?",
-    a: "30-day no-questions-asked returns. If you\u2019re not completely satisfied, send it back for a full refund. We even cover return shipping.",
-  },
-  {
-    q: "How do I care for my fur hood?",
-    a: "Shake gently after exposure to snow or rain. Store in the included dust bag away from direct heat. For deep cleaning, we recommend professional fur cleaning once per season.",
+    q: "Which parka models is Parka.Atelier compatible with?",
+    a: "Parka.Atelier is precision-engineered for all major Canada Goose parka models including the Expedition, Langford, Chilliwack, Trillium, Kensington, and Mystique. Our snap-lock system works with standard hood snap configurations. We also support Moose Knuckles, Mackage, Nobis, and Parajumpers. If your model isn\u2019t listed, contact us for a custom sizing consultation.",
   },
   {
     q: "Is the fur ethically sourced?",
-    a: "Absolutely. We work only with certified Canadian trappers who follow strict humane trapping standards. Every fur is fully traceable to its source.",
+    a: "Absolutely. Every pelt is sourced exclusively from licensed, regulated trappers operating under the Fur Council of Canada\u2019s strict ethical guidelines. We maintain full traceability from origin to finished product and provide a certificate of origin with every Signature and Prestige tier order.",
+  },
+  {
+    q: "How long does installation take?",
+    a: "The snap-lock system is designed for a sub-three-minute installation with zero tools required. Simply align the attachment points with your jacket\u2019s existing hood snaps, press to engage, and you\u2019re done. Removal is equally simple \u2014 making it easy to swap between jackets or remove for cleaning.",
+  },
+  {
+    q: "How do I care for my fur hood?",
+    a: "Coyote fur is naturally resilient and requires minimal maintenance. For everyday care, simply shake out the ruff and allow it to air-dry if wet. For deeper cleaning, we recommend professional fur cleaning once per season. Do not machine wash, tumble dry, or use chemical solvents. Signature and Prestige orders include a dedicated care kit with a conditioning brush and natural fur conditioner.",
+  },
+  {
+    q: "What is the lead time for production?",
+    a: "Each hood is made to order by our master furriers in Canada. Current lead time from order confirmation to shipping is 6\u20138 weeks. We\u2019ll keep you updated at every stage of production with photos and progress updates. Rush orders may be available \u2014 contact us to enquire.",
+  },
+  {
+    q: "Can I order a custom size for a non-Canada Goose jacket?",
+    a: "Yes. Our Prestige tier includes custom sizing for any jacket brand. We\u2019ll request measurements and photos of your hood\u2019s snap configuration, then engineer a bespoke attachment system and cut the fur to your exact specifications. Custom orders carry a 10\u201312 week lead time.",
+  },
+  {
+    q: "What is your return and exchange policy?",
+    a: "We offer a 30-day satisfaction guarantee on all orders. If you\u2019re not completely satisfied, you can return it for a full refund or exchange within 30 days of delivery. The item must be in original, unworn condition with all tags attached. We provide prepaid return labels for defective items or our errors.",
+  },
+  {
+    q: "What does the lifetime guarantee cover?",
+    a: "Our lifetime guarantee covers any defect in materials or craftsmanship \u2014 including fur shedding beyond normal levels, attachment system failure, or stitching separation. It does not cover damage from improper care, loss, or normal wear over many years. Simply contact us and we\u2019ll arrange repair or replacement at no cost.",
+  },
+  {
+    q: "Do you ship internationally?",
+    a: "Yes, we ship worldwide. Classic tier ships via standard tracked courier (7\u201314 business days). Signature and Prestige tiers ship via express courier (3\u20135 business days). Prestige includes white-glove delivery with signature required. Import duties and taxes are the responsibility of the recipient.",
   },
 ];
 
@@ -55,7 +67,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
       </button>
       <div
         className={`overflow-hidden transition-all duration-300 ${
-          open ? "max-h-96 pb-5 sm:pb-6" : "max-h-0"
+          open ? "max-h-[500px] pb-5 sm:pb-6" : "max-h-0"
         }`}
       >
         <p className="text-sm text-[var(--color-mid-gray)] leading-relaxed pr-8 sm:pr-12">{a}</p>
