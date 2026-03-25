@@ -13,44 +13,36 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center bg-black text-white pt-32 md:pt-28">
+    <section className="relative h-screen bg-black text-white">
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/hero.jpg"
           alt="Premium fur hood on parka"
           fill
-          className="object-cover object-center opacity-60"
+          className="object-cover object-center opacity-70"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
       </div>
 
-      <div className="relative z-10 container-main py-24 md:py-40" ref={ref}>
-        <div className="max-w-2xl md:ml-0 md:mr-auto">
-          <p className="text-[0.7rem] font-medium tracking-[0.2em] uppercase text-[var(--color-red)] mb-8">
-            Premium Fur Hood Replacement
-          </p>
+      <div
+        className="relative z-10 h-full flex flex-col justify-end px-6 md:px-12 lg:px-16 pb-16 md:pb-20"
+        ref={ref}
+      >
+        <h1 className="text-hero md:text-display font-light mb-5 max-w-3xl">
+          Restore the<br />
+          Iconic Look.
+        </h1>
 
-          <h1 className="font-display text-hero md:text-display font-light mb-8">
-            Restore the
-            <br />
-            Iconic Look
-          </h1>
+        <p className="text-lg md:text-xl text-white/70 font-light leading-relaxed mb-10 max-w-2xl">
+          Handcrafted fur hood replacements engineered for luxury parkas
+          such as Canada Goose. From $149&nbsp;CAD.
+        </p>
 
-          <p className="text-xl md:text-2xl text-white/60 font-light leading-relaxed mb-12 max-w-2xl">
-            Handcrafted fur hood replacements engineered for luxury parkas<br className="hidden md:inline" />
-            such as Canada Goose. From $149&nbsp;CAD.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4">
-            <a href="#shop" className="btn-warm text-center">
-              Shop Collection
-            </a>
-            <a href="#how-it-works" className="btn-glass-dark text-center">
-              How It Works
-            </a>
-          </div>
-
+        <div>
+          <a href="#shop" className="btn-glass-dark">
+            Shop Collection
+          </a>
         </div>
       </div>
     </section>
