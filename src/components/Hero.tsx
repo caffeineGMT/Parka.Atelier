@@ -55,7 +55,7 @@ export default function Hero() {
 
           {/* Trust badges */}
           <div className="flex flex-wrap gap-8 mt-12 text-white/50 text-[0.7rem] font-medium tracking-wider uppercase">
-            <span>✦ Free Shipping</span>
+            <span>✦ Handcrafted in Canada</span>
             <span>✦ Lifetime Warranty</span>
             <span>✦ 30-Day Returns</span>
           </div>

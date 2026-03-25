@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     template: "%s | Parka Atelier",
   },
   description:
-    "Premium fur hood replacements for Canada Goose, Moose Knuckles & luxury parkas. Handcrafted. Free worldwide shipping.",
+    "Premium fur hood replacements for Canada Goose, Moose Knuckles & luxury parkas. Handcrafted in Canada.",
 };
 
 export const viewport: Viewport = {

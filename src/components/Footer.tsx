@@ -10,7 +10,7 @@ export default function Footer() {
             Ready to <em className="italic">Elevate</em> Your Parka?
           </h2>
           <p className="text-white/50 mb-8 max-w-md mx-auto text-sm">
-            Join thousands of Canadians who upgraded their winter coat. Free shipping on every order.
+            Join thousands of Canadians who upgraded their winter coat.
           </p>
           <a href="#shop" className="btn-red">
             Shop Now — From $149 CAD

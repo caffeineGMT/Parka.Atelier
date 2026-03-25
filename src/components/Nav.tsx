@@ -11,7 +11,7 @@ export default function Nav() {
       {/* Announcement bar */}
       <div className="bg-[var(--color-red)] text-white text-center py-2 px-4">
         <p className="text-[0.65rem] font-semibold tracking-[0.2em] uppercase">
-          Free Worldwide Shipping — Limited Time
+          New Collection Now Available
         </p>
       </div>
 

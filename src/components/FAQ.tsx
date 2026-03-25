@@ -13,7 +13,7 @@ const FAQS = [
   },
   {
     q: "How long does shipping take?",
-    a: "Standard shipping is free worldwide and takes 7–14 business days. Express shipping (2–5 days) is available and included free with our Signature and Prestige tiers.",
+    a: "Standard shipping takes 7–14 business days worldwide. Express shipping (2–5 days) is available for Signature and Prestige tiers.",
   },
   {
     q: "What's your return policy?",
