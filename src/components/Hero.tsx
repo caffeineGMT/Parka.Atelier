@@ -31,13 +31,13 @@ export default function Hero() {
             Premium Fur Hood Replacement
           </p>
 
-          <h1 className="font-display text-hero md:text-display font-semibold mb-8">
+          <h1 className="font-display text-hero md:text-display font-light mb-8">
             Elevate Your
             <br />
             Parka
           </h1>
 
-          <p className="text-lg md:text-xl text-white/60 font-light leading-relaxed mb-12 max-w-lg">
+          <p className="text-xl md:text-2xl text-white/60 font-light leading-relaxed mb-12 max-w-lg">
             Handcrafted fur hood replacements engineered for luxury
             parkas such as Canada Goose. From $149&nbsp;CAD.
           </p>

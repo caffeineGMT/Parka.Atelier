@@ -15,9 +15,9 @@
   --font-display:       "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-body:          "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-  --text-display:       clamp(3.5rem, 8vw, 7rem);
-  --text-hero:          clamp(2.75rem, 6vw, 5rem);
-  --text-section:       clamp(2rem, 4vw, 3.5rem);
+  --text-display:       clamp(4rem, 10vw, 8rem);
+  --text-hero:          clamp(3.5rem, 8vw, 6.5rem);
+  --text-section:       clamp(2.25rem, 5vw, 4rem);
 
   --spacing-section:    clamp(5rem, 10vw, 10rem);
   --spacing-container:  clamp(1.5rem, 5vw, 8rem);
