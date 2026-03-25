@@ -40,8 +40,8 @@ export default function Hero() {
           </h1>
 
           <p className="text-lg md:text-xl text-white/70 font-light leading-relaxed mb-10 max-w-lg">
-            Handcrafted fur hood replacements engineered for Canada Goose,
-            Moose Knuckles & luxury parkas. From $149&nbsp;CAD.
+            Handcrafted fur hood replacements engineered for luxury
+            parkas such as Canada Goose. From $149&nbsp;CAD.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
