@@ -20,10 +20,6 @@ const FAQS = [
     a: "Each hood is made to order by our master furriers in Canada. Current lead time from order confirmation to shipping is 6\u20138 weeks. We\u2019ll keep you updated at every stage of production with photos and progress updates. Rush orders may be available \u2014 contact us to enquire.",
   },
   {
-    q: "Can I order a custom size for a non-Canada Goose jacket?",
-    a: "Yes. Our Prestige tier includes custom sizing for any jacket brand. We\u2019ll request measurements and photos of your hood\u2019s snap configuration, then engineer a bespoke attachment system and cut the fur to your exact specifications. Custom orders carry a 10\u201312 week lead time.",
-  },
-  {
     q: "What is your return and exchange policy?",
     a: "We offer a 30-day return policy on all orders. If you\u2019re not completely satisfied, you can return it for a full refund or exchange within 30 days of delivery. The item must be in original, unworn condition with all tags attached. We provide prepaid return labels for defective items or our errors.",
   },
