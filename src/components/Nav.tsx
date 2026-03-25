@@ -18,7 +18,7 @@ export default function Nav() {
 
           {/* Desktop */}
           <div className="hidden md:flex items-center gap-8">
-            {["Shop", "How It Works", "Reviews", "FAQ"].map((item) => (
+            {["Shop", "Reviews", "FAQ"].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase().replace(/ /g, "-")}`}
@@ -50,7 +50,7 @@ export default function Nav() {
         {open && (
           <div className="md:hidden border-t border-white/10 animate-fade-in bg-black/90 backdrop-blur-xl">
             <div className="container-main py-8 flex flex-col gap-5">
-              {["Shop", "How It Works", "Reviews", "FAQ"].map((item) => (
+              {["Shop", "Reviews", "FAQ"].map((item) => (
                 <a
                   key={item}
                   href={`#${item.toLowerCase().replace(/ /g, "-")}`}
