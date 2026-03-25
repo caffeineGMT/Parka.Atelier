@@ -25,7 +25,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
       </div>
 
-      <div className="relative z-10 container-main py-24 md:py-40" ref={ref}>
+      <div className="relative z-10 py-24 md:py-40 px-6 md:px-12 lg:px-20" ref={ref}>
         <div className="max-w-2xl">
           <p className="text-[0.7rem] font-medium tracking-[0.2em] uppercase text-[var(--color-red)] mb-8">
             Premium Fur Hood Replacement
@@ -37,9 +37,9 @@ export default function Hero() {
             Iconic Look
           </h1>
 
-          <p className="text-xl md:text-2xl text-white/60 font-light leading-relaxed mb-12 max-w-lg">
-            Handcrafted fur hood replacements engineered for luxury
-            parkas such as Canada Goose. From $149&nbsp;CAD.
+          <p className="text-xl md:text-2xl text-white/60 font-light leading-relaxed mb-12 max-w-2xl">
+            Handcrafted fur hood replacements engineered for luxury parkas<br className="hidden md:inline" />
+            such as Canada Goose. From $149&nbsp;CAD.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
