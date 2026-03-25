@@ -7,14 +7,14 @@ const REVIEWS = [
     name: "Sarah M.",
     location: "Toronto, ON",
     rating: 5,
-    text: "Looks identical to the original Canada Goose hood but at a fraction of the price. The fur quality is outstanding — even my friends couldn't tell the difference.",
+    text: "Looks identical to the original Canada Goose hood but at a fraction of the price. The fur quality is outstanding \u2014 even my friends couldn\u2019t tell the difference.",
     product: "Signature",
   },
   {
     name: "Priya K.",
     location: "Montreal, QC",
     rating: 5,
-    text: "Perfect fit on my Langford Parka. The universal snap system works flawlessly. Wish I'd found Parka.Atelier sooner.",
+    text: "Perfect fit on my Langford Parka. The universal snap system works flawlessly. Wish I\u2019d found Parka.Atelier sooner.",
     product: "Prestige",
   },
   {
@@ -59,30 +59,30 @@ export default function Reviews() {
   return (
     <section id="reviews" ref={ref} className="section-padding bg-black text-white">
       <div className="container-main">
-        <div className="text-center mb-20 reveal">
-          <p className="text-[0.7rem] font-medium tracking-[0.2em] uppercase text-orange-400 mb-5">
+        <div className="text-center mb-12 sm:mb-16 md:mb-20 reveal">
+          <p className="text-[0.65rem] sm:text-[0.7rem] font-medium tracking-[0.2em] uppercase text-orange-400 mb-4 sm:mb-5">
             Customer Reviews
           </p>
           <h2 className="text-section-title font-semibold">
             Loved by Thousands
           </h2>
-          <div className="flex items-center justify-center gap-3 mt-5">
+          <div className="flex items-center justify-center gap-3 mt-4 sm:mt-5">
             <Stars count={5} />
             <span className="text-white/40 text-sm">4.9/5 from 200+ reviews</span>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 md:gap-8 max-w-5xl mx-auto">
           {REVIEWS.map((review, i) => (
             <div
               key={review.name}
-              className="reveal rounded-2xl border border-white/8 px-12 py-14 md:px-16 md:py-20 bg-white/[0.04] backdrop-blur-sm hover:bg-white/[0.07] transition-all duration-300"
+              className="reveal rounded-xl sm:rounded-2xl border border-white/8 px-6 py-8 sm:px-10 sm:py-12 md:px-12 md:py-14 bg-white/[0.04] backdrop-blur-sm hover:bg-white/[0.07] transition-all duration-300"
               style={{ transitionDelay: `${i * 100}ms` }}
             >
-              <p className="text-[0.95rem] text-white/70 font-light leading-relaxed mt-10 mb-14">
+              <p className="text-[0.9rem] sm:text-[0.95rem] text-white/70 font-light leading-relaxed mb-8 sm:mb-10">
                 &ldquo;{review.text}&rdquo;
               </p>
-              <div className="border-t border-white/8 pt-8">
+              <div className="border-t border-white/8 pt-6 sm:pt-8">
                 <p className="text-sm font-medium">{review.name}</p>
                 <p className="text-xs text-white/35 mt-1.5">{review.location} · {review.product}</p>
               </div>

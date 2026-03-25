@@ -7,7 +7,6 @@ export default function Hero() {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    // Small delay to let the page settle, then trigger stagger
     const timer = setTimeout(() => setLoaded(true), 200);
     return () => clearTimeout(timer);
   }, []);
@@ -25,12 +24,10 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
       </div>
 
-      <div className="relative z-10 h-full flex flex-col justify-end px-10 md:px-20 lg:px-32 pb-28 md:pb-36">
+      <div className="relative z-10 h-full flex flex-col justify-end px-6 pb-20 sm:px-10 sm:pb-24 md:px-20 md:pb-32 lg:px-32 lg:pb-36">
         <h1
-          className={`text-hero md:text-display font-light mb-5 max-w-3xl transition-all duration-[800ms] ease-out ${
-            loaded
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-8"
+          className={`text-[2.5rem] leading-[1.05] sm:text-hero md:text-display font-light mb-4 sm:mb-5 max-w-3xl transition-all duration-[800ms] ease-out ${
+            loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
           Restore the<br />
@@ -38,10 +35,8 @@ export default function Hero() {
         </h1>
 
         <p
-          className={`text-lg md:text-xl text-white/70 font-light leading-relaxed mb-10 max-w-2xl transition-all duration-[800ms] ease-out delay-200 ${
-            loaded
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-8"
+          className={`text-base sm:text-lg md:text-xl text-white/70 font-light leading-relaxed mb-8 sm:mb-10 max-w-xl md:max-w-2xl transition-all duration-[800ms] ease-out delay-200 ${
+            loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
           Handcrafted fur hood replacements engineered for luxury parkas
@@ -50,9 +45,7 @@ export default function Hero() {
 
         <div
           className={`transition-all duration-[800ms] ease-out delay-400 ${
-            loaded
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-8"
+            loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
           <a href="#shop" className="btn-glass-dark">

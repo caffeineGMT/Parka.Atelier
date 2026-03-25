@@ -5,7 +5,7 @@ import { useState, useEffect, useRef } from "react";
 const FAQS = [
   {
     q: "Will it fit my parka?",
-    a: "Yes. Our universal snap-lock system is engineered to fit all major brands — Canada Goose, Moose Knuckles, Mackage, Nobis, Parajumpers, and more. If your parka has hood snap buttons, it will work.",
+    a: "Yes. Our universal snap-lock system is engineered to fit all major brands \u2014 Canada Goose, Moose Knuckles, Mackage, Nobis, Parajumpers, and more. If your parka has hood snap buttons, it will work.",
   },
   {
     q: "What kind of fur do you use?",
@@ -13,11 +13,11 @@ const FAQS = [
   },
   {
     q: "How long does shipping take?",
-    a: "Standard shipping takes 7–14 business days worldwide. Express shipping (2–5 days) is available for Signature and Prestige tiers.",
+    a: "Standard shipping takes 7\u201314 business days worldwide. Express shipping (2\u20135 days) is available for Signature and Prestige tiers.",
   },
   {
-    q: "What's your return policy?",
-    a: "30-day no-questions-asked returns. If you're not completely satisfied, send it back for a full refund. We even cover return shipping.",
+    q: "What\u2019s your return policy?",
+    a: "30-day no-questions-asked returns. If you\u2019re not completely satisfied, send it back for a full refund. We even cover return shipping.",
   },
   {
     q: "How do I care for my fur hood?",
@@ -36,9 +36,9 @@ function FAQItem({ q, a }: { q: string; a: string }) {
     <div className="border-b border-[var(--color-light-gray)]">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between py-6 text-left group"
+        className="w-full flex items-center justify-between py-5 sm:py-6 text-left group"
       >
-        <span className="font-medium text-[var(--color-charcoal)] pr-4 group-hover:text-[var(--color-red)] transition-colors">
+        <span className="text-sm sm:text-base font-medium text-[var(--color-charcoal)] pr-6 group-hover:text-[var(--color-red)] transition-colors">
           {q}
         </span>
         <svg
@@ -55,10 +55,10 @@ function FAQItem({ q, a }: { q: string; a: string }) {
       </button>
       <div
         className={`overflow-hidden transition-all duration-300 ${
-          open ? "max-h-96 pb-6" : "max-h-0"
+          open ? "max-h-96 pb-5 sm:pb-6" : "max-h-0"
         }`}
       >
-        <p className="text-sm text-[var(--color-mid-gray)] leading-relaxed pr-12">{a}</p>
+        <p className="text-sm text-[var(--color-mid-gray)] leading-relaxed pr-8 sm:pr-12">{a}</p>
       </div>
     </div>
   );
@@ -85,11 +85,11 @@ export default function FAQ() {
   return (
     <section id="faq" ref={ref} className="section-padding bg-white">
       <div className="container-main max-w-3xl">
-        <div className="text-center mb-12 reveal">
-          <p className="text-[0.65rem] font-semibold tracking-[0.3em] uppercase text-[var(--color-mid-gray)] mb-4">
+        <div className="text-center mb-10 sm:mb-12 reveal">
+          <p className="text-[0.65rem] font-medium tracking-[0.2em] uppercase text-[var(--color-mid-gray)] mb-4">
             Questions
           </p>
-          <h2 className="font-display text-section-title font-medium text-[var(--color-charcoal)]">
+          <h2 className="text-section-title font-semibold text-[var(--color-charcoal)]">
             Frequently Asked
           </h2>
         </div>
