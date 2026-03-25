@@ -79,7 +79,6 @@ export default function Reviews() {
               className="reveal rounded-2xl border border-white/8 px-8 py-10 md:px-10 md:py-12 bg-white/[0.04] backdrop-blur-sm hover:bg-white/[0.07] transition-all duration-300"
               style={{ transitionDelay: `${i * 100}ms` }}
             >
-              <Stars count={review.rating} />
               <p className="text-[0.95rem] text-white/70 font-light leading-relaxed mt-8 mb-10">
                 &ldquo;{review.text}&rdquo;
               </p>
