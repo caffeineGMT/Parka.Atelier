@@ -11,8 +11,8 @@ export default function Home() {
     <main>
       <Nav />
       <Hero />
-      <ProductShowcase />
       <HowItWorks />
+      <ProductShowcase />
       <Reviews />
       <FAQ />
       <Footer />
