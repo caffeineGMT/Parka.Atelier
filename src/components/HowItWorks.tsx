@@ -28,14 +28,6 @@ const STEPS = [
     image: "/images/step-snap.webp",
     imageAlt: "Installing fur hood onto jacket",
   },
-  {
-    num: "04",
-    subtitle: "Uncompromising Performance",
-    title: "Experience the Warmth",
-    body: "The dual-layer fur structure \u2014 long guard hairs over dense underfur \u2014 creates a wind-blocking microclimate around your face that performs flawlessly at \u221240\u00B0C.",
-    image: "/images/step-wear.webp",
-    imageAlt: "Wearing fur hood in extreme cold",
-  },
 ];
 
 export default function HowItWorks() {
