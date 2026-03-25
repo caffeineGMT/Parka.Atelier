@@ -11,13 +11,6 @@ const REVIEWS = [
     product: "Signature",
   },
   {
-    name: "James L.",
-    location: "Vancouver, BC",
-    rating: 5,
-    text: "Warmer than my old Moose Knuckles hood. Snapped right on in seconds. The craftsmanship is truly exceptional for this price point.",
-    product: "Classic",
-  },
-  {
     name: "Priya K.",
     location: "Montreal, QC",
     rating: 5,
