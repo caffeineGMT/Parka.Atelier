@@ -9,15 +9,15 @@ export default function Nav() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       {/* Announcement bar */}
-      <div className="bg-[var(--color-red)] text-white text-center py-2 px-4">
-        <p className="text-[0.65rem] font-semibold tracking-[0.2em] uppercase">
+      <div className="bg-[var(--color-red)] text-white text-center py-2.5 px-4">
+        <p className="text-[0.65rem] font-medium tracking-[0.15em] uppercase">
           New Collection Now Available
         </p>
       </div>
 
-      <nav className="bg-black text-white">
-        <div className="container-main flex items-center justify-between h-16">
-          <Link href="/" className="font-display text-xl font-semibold tracking-[0.15em] uppercase">
+      <nav className="bg-black/80 backdrop-blur-xl border-b border-white/10 text-white">
+        <div className="container-main flex items-center justify-between h-14">
+          <Link href="/" className="font-display text-lg font-semibold tracking-[0.1em] uppercase">
             Parka Atelier
           </Link>
 
@@ -27,39 +27,41 @@ export default function Nav() {
               <a
                 key={item}
                 href={`#${item.toLowerCase().replace(/ /g, "-")}`}
-                className="text-[0.65rem] font-semibold tracking-[0.2em] uppercase text-white/70 hover:text-white transition-colors"
+                className="text-[0.7rem] font-medium text-white/60 hover:text-white transition-colors"
               >
                 {item}
               </a>
             ))}
           </div>
 
-          <a href="#shop" className="hidden md:inline-flex btn-red !py-2.5 !px-6 !text-[0.6rem]">
+          <a href="#shop" className="hidden md:inline-flex btn-warm !py-2 !px-5 !text-[0.7rem]">
             Shop Now
           </a>
 
           {/* Mobile toggle */}
           <button onClick={() => setOpen(!open)} className="md:hidden p-2" aria-label="Menu">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
               {open ? <path d="M6 18L18 6M6 6l12 12" /> : <path d="M3 12h18M3 6h18M3 18h18" />}
             </svg>
           </button>
         </div>
 
         {open && (
-          <div className="md:hidden border-t border-white/10 animate-fade-in">
-            <div className="container-main py-6 flex flex-col gap-4">
+          <div className="md:hidden border-t border-white/10 animate-fade-in bg-black/90 backdrop-blur-xl">
+            <div className="container-main py-8 flex flex-col gap-5">
               {["Shop", "How It Works", "Reviews", "FAQ"].map((item) => (
                 <a
                   key={item}
                   href={`#${item.toLowerCase().replace(/ /g, "-")}`}
                   onClick={() => setOpen(false)}
-                  className="text-sm font-semibold tracking-[0.15em] uppercase text-white/70 hover:text-white py-2"
+                  className="text-sm font-medium text-white/60 hover:text-white py-1"
                 >
                   {item}
                 </a>
               ))}
-              <a href="#shop" className="btn-red w-full mt-2">Shop Now</a>
+              <a href="#shop" onClick={() => setOpen(false)} className="btn-warm w-full mt-2">
+                Shop Now
+              </a>
             </div>
           </div>
         )}

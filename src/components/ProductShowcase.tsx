@@ -55,32 +55,34 @@ export default function ProductShowcase() {
     <section id="shop" ref={sectionRef} className="section-padding bg-[var(--color-off-white)]">
       <div className="container-main">
         {/* Header */}
-        <div className="text-center mb-16 reveal">
-          <p className="text-[0.65rem] font-semibold tracking-[0.3em] uppercase text-[var(--color-mid-gray)] mb-4">
+        <div className="text-center mb-20 reveal">
+          <p className="text-[0.7rem] font-medium tracking-[0.2em] uppercase text-[var(--color-mid-gray)] mb-5">
             The Collection
           </p>
-          <h2 className="font-display text-section-title font-medium text-[var(--color-charcoal)]">
+          <h2 className="font-display text-section-title font-semibold text-[var(--color-charcoal)]">
             Three Tiers. One Standard.
           </h2>
-          <p className="text-[var(--color-mid-gray)] mt-4 max-w-lg mx-auto">
+          <p className="text-[var(--color-mid-gray)] mt-5 max-w-md mx-auto leading-relaxed">
             Every piece handcrafted with the same obsessive attention to detail.
           </p>
         </div>
 
         {/* Product grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
           {PRODUCTS.map((product, i) => (
             <article
               key={product.name}
-              className={`reveal group bg-white flex flex-col transition-all duration-300 hover:shadow-[var(--shadow-lg)] ${
-                product.highlight ? "ring-2 ring-[var(--color-red)]" : ""
+              className={`reveal group relative bg-white rounded-2xl overflow-hidden flex flex-col transition-all duration-300 hover:shadow-[0_12px_40px_rgba(0,0,0,0.12)] ${
+                product.highlight ? "ring-1 ring-[var(--color-red)]/30" : ""
               }`}
               style={{ transitionDelay: `${i * 100}ms` }}
             >
               {/* Badge */}
               {product.badge && (
-                <div className={`absolute top-4 right-4 z-10 px-3 py-1 text-[0.55rem] font-bold tracking-[0.2em] uppercase text-white ${
-                  product.highlight ? "bg-[var(--color-red)]" : "bg-black"
+                <div className={`absolute top-5 right-5 z-10 px-4 py-1.5 rounded-full text-[0.65rem] font-medium text-white backdrop-blur-md ${
+                  product.highlight
+                    ? "bg-[var(--color-red)]/80 border border-white/10"
+                    : "bg-black/60 border border-white/10"
                 }`}>
                   {product.badge}
                 </div>
@@ -98,27 +100,27 @@ export default function ProductShowcase() {
               </div>
 
               {/* Info */}
-              <div className="flex flex-col flex-1 p-6 lg:p-8">
-                <p className="text-[0.6rem] font-semibold tracking-[0.2em] uppercase text-[var(--color-mid-gray)] mb-1">
+              <div className="flex flex-col flex-1 p-8 lg:p-10">
+                <p className="text-[0.65rem] font-medium tracking-[0.15em] uppercase text-[var(--color-mid-gray)] mb-2">
                   {product.color}
                 </p>
-                <h3 className="font-display text-2xl font-medium text-[var(--color-charcoal)] mb-4">
+                <h3 className="font-display text-2xl font-semibold text-[var(--color-charcoal)] mb-5">
                   {product.name}
                 </h3>
 
                 {/* Price */}
-                <div className="flex items-baseline gap-3 mb-6 pb-6 border-b border-[var(--color-light-gray)]">
-                  <span className="font-display text-3xl font-medium">${product.price}</span>
+                <div className="flex items-baseline gap-3 mb-8 pb-8 border-b border-[var(--color-light-gray)]">
+                  <span className="font-display text-3xl font-semibold">${product.price}</span>
                   <span className="text-[var(--color-mid-gray)] line-through text-sm">${product.originalPrice}</span>
-                  <span className="text-[0.6rem] font-bold tracking-wider uppercase text-[var(--color-red)]">
+                  <span className="text-[0.65rem] font-medium text-[var(--color-red)]">
                     Save {Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}%
                   </span>
                 </div>
 
                 {/* Features */}
-                <ul className="flex-1 space-y-2.5 mb-6">
+                <ul className="flex-1 space-y-3.5 mb-8">
                   {product.features.map((feat) => (
-                    <li key={feat} className="flex items-start gap-2.5 text-sm text-[var(--color-dark-gray)]">
+                    <li key={feat} className="flex items-start gap-3 text-sm text-[var(--color-dark-gray)]">
                       <svg className="w-4 h-4 mt-0.5 flex-shrink-0 text-[var(--color-red)]" viewBox="0 0 20 20" fill="currentColor">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
@@ -129,7 +131,7 @@ export default function ProductShowcase() {
 
                 <a
                   href="#"
-                  className={product.highlight ? "btn-red w-full" : "btn-primary w-full"}
+                  className={product.highlight ? "btn-warm w-full" : "btn-glass-light w-full"}
                 >
                   Add to Cart
                 </a>

@@ -35,7 +35,7 @@ const REVIEWS = [
 
 function Stars({ count }: { count: number }) {
   return (
-    <div className="flex gap-0.5">
+    <div className="flex gap-1">
       {Array.from({ length: count }).map((_, i) => (
         <svg key={i} className="w-4 h-4 text-[var(--color-red)]" viewBox="0 0 20 20" fill="currentColor">
           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
@@ -66,16 +66,16 @@ export default function Reviews() {
   return (
     <section id="reviews" ref={ref} className="section-padding bg-black text-white">
       <div className="container-main">
-        <div className="text-center mb-16 reveal">
-          <p className="text-[0.65rem] font-semibold tracking-[0.3em] uppercase text-[var(--color-red)] mb-4">
+        <div className="text-center mb-20 reveal">
+          <p className="text-[0.7rem] font-medium tracking-[0.2em] uppercase text-[var(--color-red)] mb-5">
             Customer Reviews
           </p>
-          <h2 className="font-display text-section-title font-medium">
+          <h2 className="font-display text-section-title font-semibold">
             Loved by Thousands
           </h2>
-          <div className="flex items-center justify-center gap-3 mt-4">
+          <div className="flex items-center justify-center gap-3 mt-5">
             <Stars count={5} />
-            <span className="text-white/50 text-sm">4.9/5 from 200+ reviews</span>
+            <span className="text-white/40 text-sm">4.9/5 from 200+ reviews</span>
           </div>
         </div>
 
@@ -83,16 +83,16 @@ export default function Reviews() {
           {REVIEWS.map((review, i) => (
             <div
               key={review.name}
-              className="reveal border border-white/10 p-6 lg:p-8 bg-white/5 hover:bg-white/[0.08] transition-colors"
+              className="reveal rounded-2xl border border-white/8 p-8 bg-white/[0.04] backdrop-blur-sm hover:bg-white/[0.07] transition-all duration-300"
               style={{ transitionDelay: `${i * 100}ms` }}
             >
               <Stars count={review.rating} />
-              <p className="text-sm text-white/80 font-light leading-relaxed mt-4 mb-6">
+              <p className="text-sm text-white/70 font-light leading-relaxed mt-6 mb-8">
                 &ldquo;{review.text}&rdquo;
               </p>
-              <div className="border-t border-white/10 pt-4">
+              <div className="border-t border-white/8 pt-5">
                 <p className="text-sm font-medium">{review.name}</p>
-                <p className="text-xs text-white/40">{review.location} · {review.product}</p>
+                <p className="text-xs text-white/35 mt-1">{review.location} · {review.product}</p>
               </div>
             </div>
           ))}
