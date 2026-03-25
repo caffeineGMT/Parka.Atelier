@@ -25,7 +25,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
       </div>
 
-      <div className="relative z-10 h-full flex flex-col justify-end px-8 md:px-16 lg:px-24 pb-24 md:pb-32">
+      <div className="relative z-10 h-full flex flex-col justify-end px-10 md:px-20 lg:px-32 pb-28 md:pb-36">
         <h1
           className={`text-hero md:text-display font-light mb-5 max-w-3xl transition-all duration-[800ms] ease-out ${
             loaded
