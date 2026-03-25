@@ -76,7 +76,7 @@ export default function Reviews() {
           {REVIEWS.map((review, i) => (
             <div
               key={review.name}
-              className="reveal rounded-2xl border border-white/8 px-8 py-10 md:px-10 md:py-12 bg-white/[0.04] backdrop-blur-sm hover:bg-white/[0.07] transition-all duration-300"
+              className="reveal rounded-2xl border border-white/8 px-10 py-12 md:px-14 md:py-16 bg-white/[0.04] backdrop-blur-sm hover:bg-white/[0.07] transition-all duration-300"
               style={{ transitionDelay: `${i * 100}ms` }}
             >
               <p className="text-[0.95rem] text-white/70 font-light leading-relaxed mt-8 mb-10">
