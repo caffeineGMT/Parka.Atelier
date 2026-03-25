@@ -1,10 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import { useSession } from "next-auth/react";
 import Link from "next/link";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
+  const { data: session } = useSession();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
@@ -25,6 +27,16 @@ export default function Nav() {
                 {item}
               </a>
             ))}
+            <Link
+              href={session?.user ? "/account" : "/login"}
+              className="text-white/60 hover:text-white transition-colors"
+              aria-label="Account"
+            >
+              <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+            </Link>
           </div>
 
           {/* Mobile toggle */}
@@ -48,6 +60,13 @@ export default function Nav() {
                   {item}
                 </a>
               ))}
+              <Link
+                href={session?.user ? "/account" : "/login"}
+                onClick={() => setOpen(false)}
+                className="text-sm font-medium text-white/60 hover:text-white py-1"
+              >
+                {session?.user ? "Account" : "Sign In"}
+              </Link>
             </div>
           </div>
         )}
