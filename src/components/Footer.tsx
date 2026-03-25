@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="border-b border-white/10">
         <div className="container-main py-16 text-center">
           <h2 className="font-display text-3xl md:text-4xl font-medium mb-4">
-            Ready to <em className="italic">Elevate</em> Your Parka?
+            Ready to Elevate Your Parka?
           </h2>
           <p className="text-white/50 mb-8 max-w-md mx-auto text-sm">
             Join thousands of Canadians who upgraded their winter coat.

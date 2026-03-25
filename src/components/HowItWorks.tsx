@@ -62,7 +62,7 @@ export default function HowItWorks() {
             Simple Process
           </p>
           <h2 className="font-display text-section-title font-medium text-[var(--color-charcoal)]">
-            How It <em className="italic">Works</em>
+            How It Works
           </h2>
         </div>
 

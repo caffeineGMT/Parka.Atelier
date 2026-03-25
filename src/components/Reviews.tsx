@@ -71,7 +71,7 @@ export default function Reviews() {
             Customer Reviews
           </p>
           <h2 className="font-display text-section-title font-medium">
-            Loved by <em className="italic">Thousands</em>
+            Loved by Thousands
           </h2>
           <div className="flex items-center justify-center gap-3 mt-4">
             <Stars count={5} />

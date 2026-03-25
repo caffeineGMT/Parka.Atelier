@@ -60,7 +60,7 @@ export default function ProductShowcase() {
             The Collection
           </p>
           <h2 className="font-display text-section-title font-medium text-[var(--color-charcoal)]">
-            Three Tiers. <em className="italic">One Standard.</em>
+            Three Tiers. One Standard.
           </h2>
           <p className="text-[var(--color-mid-gray)] mt-4 max-w-lg mx-auto">
             Every piece handcrafted with the same obsessive attention to detail.

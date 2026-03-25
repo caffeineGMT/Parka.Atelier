@@ -36,7 +36,7 @@ export default function Hero() {
           <h1 className="font-display text-hero md:text-display font-medium mb-6 leading-[1.05]">
             Elevate Your
             <br />
-            <em className="italic">Parka</em>
+            Parka
           </h1>
 
           <p className="text-lg md:text-xl text-white/70 font-light leading-relaxed mb-10 max-w-lg">

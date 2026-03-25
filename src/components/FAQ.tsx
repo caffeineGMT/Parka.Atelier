@@ -90,7 +90,7 @@ export default function FAQ() {
             Questions
           </p>
           <h2 className="font-display text-section-title font-medium text-[var(--color-charcoal)]">
-            Frequently <em className="italic">Asked</em>
+            Frequently Asked
           </h2>
         </div>
 
