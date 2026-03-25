@@ -25,8 +25,8 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
       </div>
 
-      <div className="relative z-10 py-24 md:py-40 px-6 md:px-12 lg:px-20" ref={ref}>
-        <div className="max-w-2xl">
+      <div className="relative z-10 container-main py-24 md:py-40" ref={ref}>
+        <div className="max-w-2xl md:ml-0 md:mr-auto">
           <p className="text-[0.7rem] font-medium tracking-[0.2em] uppercase text-[var(--color-red)] mb-8">
             Premium Fur Hood Replacement
           </p>
@@ -51,11 +51,6 @@ export default function Hero() {
             </a>
           </div>
 
-          <div className="flex flex-wrap gap-8 mt-16 text-white/40 text-[0.75rem] font-medium tracking-wide">
-            <span>✦ Handcrafted in Canada</span>
-            <span>✦ Lifetime Warranty</span>
-            <span>✦ 30-Day Returns</span>
-          </div>
         </div>
       </div>
     </section>
