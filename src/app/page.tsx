@@ -1,7 +1,6 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import ProductShowcase from "@/components/ProductShowcase";
-import HowItWorks from "@/components/HowItWorks";
+import Configurator from "@/components/Configurator";
 import Reviews from "@/components/Reviews";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
@@ -11,8 +10,7 @@ export default function Home() {
     <main>
       <Nav />
       <Hero />
-      <HowItWorks />
-      <ProductShowcase />
+      <Configurator />
       <Reviews />
       <FAQ />
       <Footer />
