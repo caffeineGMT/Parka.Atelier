@@ -6,11 +6,8 @@ import Image from "next/image";
 /* ─── DATA ─────────────────────────────────────────────────── */
 
 const MODELS = [
-  { id: "langford",   name: "Langford",   brand: "Canada Goose", image: "/images/model-langford.jpg" },
   { id: "expedition", name: "Expedition", brand: "Canada Goose", image: "/images/model-expedition.jpg" },
   { id: "chilliwack", name: "Chilliwack", brand: "Canada Goose", image: "/images/model-chilliwack.jpg" },
-  { id: "kensington", name: "Kensington", brand: "Canada Goose", image: "/images/model-kensington.jpg" },
-  { id: "other",      name: "Other",      brand: "Any Brand",    image: "/images/step-select.webp" },
 ];
 
 const FURS = [
@@ -179,7 +176,7 @@ export default function Configurator() {
           <p className="text-[0.7rem] font-medium tracking-[0.2em] uppercase text-[var(--color-mid-gray)] mb-4">
             Build Yours
           </p>
-          <h2 className="text-section-title font-semibold text-[var(--color-charcoal)]">
+          <h2 className="text-hero md:text-display font-semibold text-[var(--color-charcoal)]">
             Configure Your Hood
           </h2>
           <p className="text-[var(--color-mid-gray)] mt-4 max-w-md mx-auto text-sm sm:text-base leading-relaxed">
@@ -203,7 +200,7 @@ export default function Configurator() {
         {/* ── STEP 1: Model ── */}
         {step === 1 && (
           <div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 mb-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 max-w-2xl mx-auto gap-3 sm:gap-4 mb-10">
               {MODELS.map((m) => (
                 <SelectorCard
                   key={m.id}
