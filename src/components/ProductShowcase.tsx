@@ -68,7 +68,7 @@ export default function ProductShowcase() {
         </div>
 
         {/* Product grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-12">
           {PRODUCTS.map((product, i) => (
             <article
               key={product.name}
@@ -100,7 +100,7 @@ export default function ProductShowcase() {
               </div>
 
               {/* Info */}
-              <div className="flex flex-col flex-1 p-8 lg:p-10">
+              <div className="flex flex-col flex-1 p-10 lg:p-14">
                 <p className="text-[0.65rem] font-medium tracking-[0.15em] uppercase text-[var(--color-mid-gray)] mb-2">
                   {product.color}
                 </p>
