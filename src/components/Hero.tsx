@@ -32,9 +32,9 @@ export default function Hero() {
           </p>
 
           <h1 className="font-display text-hero md:text-display font-light mb-8">
-            Elevate Your
+            Restore the
             <br />
-            Parka
+            Iconic Look
           </h1>
 
           <p className="text-xl md:text-2xl text-white/60 font-light leading-relaxed mb-12 max-w-lg">
