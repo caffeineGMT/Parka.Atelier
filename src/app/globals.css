@@ -12,8 +12,8 @@
   --color-red-dark:     #9E0E27;
   --color-cream:        #FAF8F5;
 
-  --font-display:       "Playfair Display", Georgia, serif;
-  --font-body:          "Inter", system-ui, sans-serif;
+  --font-display:       -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-body:          -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   --text-display:       clamp(3rem, 7vw, 6rem);
   --text-hero:          clamp(2.25rem, 5vw, 4rem);
@@ -26,16 +26,17 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 body {
   background: var(--color-white); color: var(--color-charcoal);
   font-family: var(--font-body); line-height: 1.6; overflow-x: hidden;
+  letter-spacing: -0.01em;
 }
 
-.font-display { font-family: var(--font-display); }
-.text-display { font-size: var(--text-display); line-height: 1.05; }
-.text-hero { font-size: var(--text-hero); line-height: 1.1; }
-.text-section-title { font-size: var(--text-section); line-height: 1.15; }
+.font-display { font-family: var(--font-display); letter-spacing: -0.03em; }
+.text-display { font-size: var(--text-display); line-height: 1.05; letter-spacing: -0.04em; }
+.text-hero { font-size: var(--text-hero); line-height: 1.08; letter-spacing: -0.03em; }
+.text-section-title { font-size: var(--text-section); line-height: 1.12; letter-spacing: -0.025em; }
 
 .container-main {
   max-width: 1440px; margin: 0 auto;
@@ -48,9 +49,10 @@ body {
 .btn-primary {
   display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
   background: var(--color-black); color: var(--color-white);
-  font-family: var(--font-body); font-size: 0.75rem; font-weight: 600;
-  letter-spacing: 0.12em; text-transform: uppercase;
-  padding: 1rem 2.5rem; border: none; cursor: pointer;
+  font-family: var(--font-body); font-size: 0.8125rem; font-weight: 500;
+  letter-spacing: 0; text-transform: none;
+  padding: 0.875rem 2rem; border: none; cursor: pointer;
+  border-radius: 980px;
   transition: all 0.3s var(--ease-out); text-decoration: none;
 }
 .btn-primary:hover { background: var(--color-dark-gray); }
@@ -58,34 +60,36 @@ body {
 .btn-secondary {
   display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
   background: transparent; color: var(--color-black);
-  font-family: var(--font-body); font-size: 0.75rem; font-weight: 600;
-  letter-spacing: 0.12em; text-transform: uppercase;
-  padding: 1rem 2.5rem; border: 1px solid var(--color-black); cursor: pointer;
+  font-family: var(--font-body); font-size: 0.8125rem; font-weight: 500;
+  letter-spacing: 0; text-transform: none;
+  padding: 0.875rem 2rem; border: 1px solid var(--color-light-gray); cursor: pointer;
+  border-radius: 980px;
   transition: all 0.3s var(--ease-out); text-decoration: none;
 }
-.btn-secondary:hover { background: var(--color-black); color: var(--color-white); }
+.btn-secondary:hover { background: var(--color-off-white); }
 
 .btn-red {
   display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
   background: var(--color-red); color: var(--color-white);
-  font-family: var(--font-body); font-size: 0.75rem; font-weight: 600;
-  letter-spacing: 0.12em; text-transform: uppercase;
-  padding: 1rem 2.5rem; border: none; cursor: pointer;
+  font-family: var(--font-body); font-size: 0.8125rem; font-weight: 500;
+  letter-spacing: 0; text-transform: none;
+  padding: 0.875rem 2rem; border: none; cursor: pointer;
+  border-radius: 980px;
   transition: all 0.3s var(--ease-out); text-decoration: none;
 }
 .btn-red:hover { background: var(--color-red-dark); }
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
+  from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-.animate-fade-up { animation: fadeUp 0.8s var(--ease-out) both; }
-.animate-fade-in { animation: fadeIn 0.6s var(--ease-out) both; }
+.animate-fade-up { animation: fadeUp 0.7s var(--ease-out) both; }
+.animate-fade-in { animation: fadeIn 0.5s var(--ease-out) both; }
 
 .reveal {
-  opacity: 0; transform: translateY(30px);
-  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+  opacity: 0; transform: translateY(20px);
+  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
 }
 .reveal.is-visible { opacity: 1; transform: translateY(0); }
 

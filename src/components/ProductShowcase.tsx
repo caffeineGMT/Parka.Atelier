@@ -20,6 +20,7 @@ const PRODUCTS = [
     color: "Shadow Coyote",
     badge: "Best Seller",
     highlight: true,
+    features: ["Grade A+ coyote fur", "Universal snap-lock fit", "Lifetime guarantee", "Certificate of authenticity"],
   },
   {
     name: "Prestige",
