@@ -12,8 +12,8 @@
   --color-red-dark:     #9E0E27;
   --color-cream:        #FAF8F5;
 
-  --font-display:       "Sora", -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-body:          "Sora", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display:       "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-body:          "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   --text-display:       clamp(3.5rem, 8vw, 7rem);
   --text-hero:          clamp(2.75rem, 6vw, 5rem);
