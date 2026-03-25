@@ -39,6 +39,14 @@ const FAQS = [
     q: "Do you ship internationally?",
     a: "Yes, we ship worldwide. Classic tier ships via standard tracked courier (7\u201314 business days). Signature and Prestige tiers ship via express courier (3\u20135 business days). Prestige includes white-glove delivery with signature required. Import duties and taxes are the responsibility of the recipient.",
   },
+  {
+    q: "How can I contact you?",
+    a: "You can reach us at hello@parka-atelier.com. We typically respond within 24 hours on business days. You can also DM us on Instagram @parka.atelier for quick questions.",
+  },
+  {
+    q: "Are you on Instagram?",
+    a: "Yes! Follow us @parka.atelier on Instagram for styling inspiration, behind-the-scenes looks at our workshop, customer photos, and new collection announcements.",
+  },
 ];
 
 function FAQItem({ q, a }: { q: string; a: string }) {
