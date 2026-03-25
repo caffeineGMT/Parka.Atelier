@@ -8,13 +8,6 @@ export default function Nav() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
-      {/* Announcement bar */}
-      <div className="bg-[var(--color-red)] text-white text-center py-2.5 px-4">
-        <p className="text-[0.65rem] font-medium tracking-[0.15em] uppercase">
-          New Collection Now Available
-        </p>
-      </div>
-
       <nav className="bg-black/80 backdrop-blur-xl border-b border-white/10 text-white">
         <div className="container-main flex items-center justify-between h-14">
           <Link href="/" className="font-display text-lg font-semibold tracking-[0.1em] uppercase">
