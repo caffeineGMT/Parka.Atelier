@@ -8,10 +8,10 @@
  * Everything else (API routes, components) stays the same.
  */
 
-import { stripeProvider } from "./stripe-provider";
+import { shopifyProvider } from "./shopify-provider";
 
 // Swap this line to switch providers:
-export const commerce = stripeProvider;
+export const commerce = shopifyProvider;
 
 // Re-export types
 export type { Product, CheckoutInput, CheckoutResult, Order, CommerceProvider } from "./types";

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@auth/core": "^0.41.0",
+    "@shopify/hydrogen-react": "^2026.1.1",
     "@stripe/stripe-js": "^8.11.0",
     "next": "16.2.1",
     "next-auth": "^5.0.0-beta.30",
