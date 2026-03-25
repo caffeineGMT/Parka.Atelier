@@ -10,7 +10,7 @@ const PRODUCTS = [
     originalPrice: 249,
     image: "/images/product-classic.jpg",
     color: "Natural Coyote",
-    features: ["Grade A coyote fur", "Universal snap-lock fit", "All parka brands", "1-year guarantee"],
+    features: ["Grade A coyote fur", "Universal snap-lock fit", "All parka brands", "30-day returns"],
   },
   {
     name: "Signature",
@@ -20,7 +20,7 @@ const PRODUCTS = [
     color: "Shadow Coyote",
     badge: "Best Seller",
     highlight: true,
-    features: ["Grade A+ coyote fur", "Universal snap-lock fit", "Lifetime guarantee", "Certificate of authenticity"],
+    features: ["Grade A+ coyote fur", "Universal snap-lock fit", "Certificate of authenticity"],
   },
   {
     name: "Prestige",
@@ -29,7 +29,7 @@ const PRODUCTS = [
     image: "/images/product-prestige.jpg",
     color: "Ivory Coyote",
     badge: "Limited",
-    features: ["Rare Grade S ivory fur", "Custom sizing available", "Lifetime unconditional warranty", "White-glove delivery", "Cedar storage box"],
+    features: ["Rare Grade S ivory fur", "Custom sizing available", "White-glove delivery", "Cedar storage box"],
   },
 ];
 
