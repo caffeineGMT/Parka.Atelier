@@ -176,7 +176,7 @@ export default function Configurator() {
           <p className="text-[0.7rem] font-medium tracking-[0.2em] uppercase text-[var(--color-mid-gray)] mb-4">
             Build Yours
           </p>
-          <h2 className="text-hero md:text-display font-semibold text-[var(--color-charcoal)]">
+          <h2 className="text-section-title font-semibold text-[var(--color-charcoal)]">
             Configure Your Hood
           </h2>
           <p className="text-[var(--color-mid-gray)] mt-4 max-w-md mx-auto text-sm sm:text-base leading-relaxed">
