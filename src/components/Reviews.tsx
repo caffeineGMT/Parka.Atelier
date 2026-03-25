@@ -76,13 +76,13 @@ export default function Reviews() {
           {REVIEWS.map((review, i) => (
             <div
               key={review.name}
-              className="reveal rounded-2xl border border-white/8 px-10 py-12 md:px-14 md:py-16 bg-white/[0.04] backdrop-blur-sm hover:bg-white/[0.07] transition-all duration-300"
+              className="reveal rounded-2xl border border-white/8 px-12 py-14 md:px-16 md:py-20 bg-white/[0.04] backdrop-blur-sm hover:bg-white/[0.07] transition-all duration-300"
               style={{ transitionDelay: `${i * 100}ms` }}
             >
-              <p className="text-[0.95rem] text-white/70 font-light leading-relaxed mt-8 mb-10">
+              <p className="text-[0.95rem] text-white/70 font-light leading-relaxed mt-10 mb-14">
                 &ldquo;{review.text}&rdquo;
               </p>
-              <div className="border-t border-white/8 pt-6">
+              <div className="border-t border-white/8 pt-8">
                 <p className="text-sm font-medium">{review.name}</p>
                 <p className="text-xs text-white/35 mt-1.5">{review.location} · {review.product}</p>
               </div>
