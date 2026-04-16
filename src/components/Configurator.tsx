@@ -6,8 +6,8 @@ import Image from "next/image";
 /* ─── DATA ─────────────────────────────────────────────────── */
 
 const MODELS = [
-  { id: "expedition", name: "Expedition", brand: "Canada Goose", image: "/images/model-expedition.jpg" },
-  { id: "chilliwack", name: "Chilliwack", brand: "Canada Goose", image: "/images/model-chilliwack.jpg" },
+  { id: "expedition", name: "Expedition", brand: "Canada Goose", image: "/images/expediture.webp" },
+  { id: "chilliwack", name: "Chilliwack", brand: "Canada Goose", image: "/images/chilliwack.jpg" },
 ];
 
 const FURS = [
@@ -26,6 +26,15 @@ const ZIPPERS = [
     desc: "Traditional secure fastening. Ideal for heavy-use parkas." },
   { id: "magnetic", name: "Magnetic",  image: "/images/zipper-magnetic.jpg",
     desc: "Effortless one-hand attachment. Ultra-clean look." },
+];
+
+
+const COLLAR_COLORS = [
+  { id: "black", name: "Black", hex: "#1A1A1A" },
+  { id: "navy", name: "Navy", hex: "#1B2A4A" },
+  { id: "charcoal", name: "Charcoal", hex: "#3D3D3D" },
+  { id: "burgundy", name: "Burgundy", hex: "#722F37" },
+  { id: "forest", name: "Forest Green", hex: "#2D4A3E" },
 ];
 
 const TIER_PRICES: Record<string, number> = {
@@ -120,12 +129,15 @@ export default function Configurator() {
   const [model, setModel] = useState<string | null>(null);
   const [fur, setFur] = useState<string | null>(null);
   const [zipper, setZipper] = useState<string | null>(null);
+  const [collar, setCollar] = useState<string | null>(null);
+  const [zippyLength, setZippyLength] = useState<string>("");
   const [adding, setAdding] = useState(false);
   const ref = useRef<HTMLElement>(null);
 
   const selectedFur = FURS.find((f) => f.id === fur);
   const selectedModel = MODELS.find((m) => m.id === model);
   const selectedZipper = ZIPPERS.find((z) => z.id === zipper);
+  const selectedCollar = COLLAR_COLORS.find((cl) => cl.id === collar);
   const price = fur ? TIER_PRICES[fur] : null;
 
   // Scroll to top of section on step change
@@ -136,17 +148,18 @@ export default function Configurator() {
   }, [step]);
 
   async function handleCheckout() {
-    if (!fur || !model || !zipper) return;
+    if (!fur || !model || !zipper || !collar || !zippyLength) return;
     setAdding(true);
     try {
-      const tier = fur === "natural" ? "classic" : fur === "shadow" ? "signature" : "prestige";
       const res = await fetch("/api/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          tier,
-          color: selectedFur?.name,
-          size: selectedZipper?.name,
+          model: selectedModel?.name,
+          fur: selectedFur?.name,
+          zipper: selectedZipper?.name,
+          collar: selectedCollar?.name,
+          zippyLength,
         }),
       });
       const data = await res.json();
@@ -162,6 +175,8 @@ export default function Configurator() {
     { num: 1, label: "Select Your Parka" },
     { num: 2, label: "Choose Your Fur" },
     { num: 3, label: "Zipper Style" },
+    { num: 4, label: "Collar Color" },
+    { num: 5, label: "Zippy Length" },
   ];
 
   return (
@@ -186,10 +201,10 @@ export default function Configurator() {
 
         {/* Progress + step name */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-10">
-          <StepIndicator current={step} total={3} />
+          <StepIndicator current={step} total={5} />
           <div className="text-right">
             <p className="text-[0.65rem] font-medium tracking-[0.2em] uppercase text-[var(--color-red)]">
-              Step {step} of 3
+              Step {step} of 5
             </p>
             <p className="font-semibold text-[var(--color-charcoal)]">
               {STEPS[step - 1].label}
@@ -322,8 +337,90 @@ export default function Configurator() {
               ))}
             </div>
 
+            <div className="flex justify-between">
+              <button onClick={() => setStep(2)} className="btn-secondary">
+                ← Back
+              </button>
+              <button
+                onClick={() => setStep(4)}
+                disabled={!zipper}
+                className="btn-warm disabled:opacity-40 disabled:cursor-not-allowed"
+              >
+                Next: Collar Color →
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* ── STEP 4: Collar Color ── */}
+        {step === 4 && (
+          <div>
+            <p className="text-sm text-[var(--color-mid-gray)] mb-6">Choose the collar color for your hood attachment.</p>
+            <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 sm:gap-4 mb-10 max-w-2xl mx-auto">
+              {COLLAR_COLORS.map((cl) => (
+                <button
+                  key={cl.id}
+                  onClick={() => setCollar(cl.id)}
+                  className={`group flex flex-col items-center gap-3 rounded-xl border-2 p-4 transition-all duration-300 ${
+                    collar === cl.id
+                      ? "border-[var(--color-charcoal)] shadow-lg scale-[1.02]"
+                      : "border-[var(--color-light-gray)] hover:border-[var(--color-mid-gray)] hover:shadow-md"
+                  }`}
+                >
+                  <div
+                    className="w-12 h-12 rounded-full border-2 border-white shadow-md relative"
+                    style={{ background: cl.hex }}
+                  >
+                    {collar === cl.id && (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <svg className="w-5 h-5" viewBox="0 0 12 12" fill="none">
+                          <path d="M2 6l3 3 5-5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </div>
+                    )}
+                  </div>
+                  <p className="text-xs font-medium text-[var(--color-charcoal)]">{cl.name}</p>
+                </button>
+              ))}
+            </div>
+
+            <div className="flex justify-between">
+              <button onClick={() => setStep(3)} className="btn-secondary">
+                ← Back
+              </button>
+              <button
+                onClick={() => setStep(5)}
+                disabled={!collar}
+                className="btn-warm disabled:opacity-40 disabled:cursor-not-allowed"
+              >
+                Next: Zippy Length →
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* ── STEP 5: Zippy Length ── */}
+        {step === 5 && (
+          <div>
+            <p className="text-sm text-[var(--color-mid-gray)] mb-6">Enter your desired zippy length in centimeters.</p>
+            <div className="max-w-xs mx-auto mb-10">
+              <label className="block text-xs font-medium text-[var(--color-mid-gray)] uppercase tracking-wider mb-2">
+                Zippy Length (cm)
+              </label>
+              <input
+                type="number"
+                min="10"
+                max="100"
+                value={zippyLength}
+                onChange={(e) => setZippyLength(e.target.value)}
+                placeholder="e.g. 45"
+                className="w-full px-4 py-3 rounded-xl border-2 border-[var(--color-light-gray)] focus:border-[var(--color-charcoal)] focus:outline-none text-center text-lg font-semibold text-[var(--color-charcoal)] transition-colors"
+              />
+              <p className="text-xs text-[var(--color-mid-gray)] mt-2 text-center">Typical range: 30–60 cm</p>
+            </div>
+
             {/* Summary card */}
-            {model && fur && zipper && (
+            {model && fur && zipper && collar && zippyLength && (
               <div className="bg-[var(--color-off-white)] rounded-2xl p-6 sm:p-8 mb-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
                 <div className="space-y-2 text-sm">
                   <p className="text-[0.65rem] font-semibold tracking-[0.15em] uppercase text-[var(--color-mid-gray)] mb-3">
@@ -348,6 +445,19 @@ export default function Configurator() {
                       <strong>{selectedZipper?.name}</strong> zipper
                     </span>
                   </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-1 h-1 rounded-full bg-[var(--color-red)]" />
+                    <span className="text-[var(--color-charcoal)]">
+                      Collar: <strong>{selectedCollar?.name}</strong>
+                    </span>
+                    <div className="w-4 h-4 rounded-full border border-[var(--color-light-gray)]" style={{ background: selectedCollar?.hex }} />
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-1 h-1 rounded-full bg-[var(--color-red)]" />
+                    <span className="text-[var(--color-charcoal)]">
+                      Zippy: <strong>{zippyLength} cm</strong>
+                    </span>
+                  </div>
                 </div>
                 <div className="text-right sm:flex-shrink-0">
                   <p className="text-[0.65rem] text-[var(--color-mid-gray)] mb-1">Total</p>
@@ -357,12 +467,12 @@ export default function Configurator() {
             )}
 
             <div className="flex justify-between">
-              <button onClick={() => setStep(2)} className="btn-secondary">
+              <button onClick={() => setStep(4)} className="btn-secondary">
                 ← Back
               </button>
               <button
                 onClick={handleCheckout}
-                disabled={!zipper || adding}
+                disabled={!zippyLength || adding}
                 className="btn-warm disabled:opacity-40 disabled:cursor-not-allowed min-w-[160px]"
               >
                 {adding ? "Loading..." : "Add to Cart →"}

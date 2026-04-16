@@ -8,20 +8,16 @@ const FAQS = [
     a: "Parka.Atelier is precision-engineered for all major Canada Goose parka models including the Expedition, Langford, Chilliwack, Trillium, Kensington, and Mystique. Our snap-lock system works with standard hood snap configurations. We also support Moose Knuckles, Mackage, Nobis, and Parajumpers. If your model isn\u2019t listed, contact us for a custom sizing consultation.",
   },
   {
-    q: "How long does installation take?",
-    a: "The snap-lock system is designed for a sub-three-minute installation with zero tools required. Simply align the attachment points with your jacket\u2019s existing hood snaps, press to engage, and you\u2019re done. Removal is equally simple \u2014 making it easy to swap between jackets or remove for cleaning.",
-  },
-  {
     q: "How do I care for my fur hood?",
-    a: "Coyote fur is naturally resilient and requires minimal maintenance. For everyday care, simply shake out the ruff and allow it to air-dry if wet. For deeper cleaning, we recommend professional fur cleaning once per season. Do not machine wash, tumble dry, or use chemical solvents. Signature and Prestige orders include a dedicated care kit with a conditioning brush and natural fur conditioner.",
+    a: "Coyote fur is naturally resilient and requires minimal maintenance. For everyday care, simply shake out the ruff and allow it to air-dry if wet. For deeper cleaning, we recommend professional fur cleaning once per season. Do not machine wash, tumble dry, or use chemical solvents.",
   },
   {
-    q: "What is the lead time for production?",
+    q: "What is the lead time for production and shipping?",
     a: "Each hood is made to order by our master furriers in Canada. Current lead time from order confirmation to shipping is 6\u20138 weeks. We\u2019ll keep you updated at every stage of production with photos and progress updates. Rush orders may be available \u2014 contact us to enquire.",
   },
   {
     q: "What is your return and exchange policy?",
-    a: "We offer a 30-day return policy on all orders. If you\u2019re not completely satisfied, you can return it for a full refund or exchange within 30 days of delivery. The item must be in original, unworn condition with all tags attached. We provide prepaid return labels for defective items or our errors.",
+    a: "We offer a 14-day return policy on all orders, starting from the day you received it. If you\u2019re not completely satisfied, you can return it for a full refund or exchange within 14 days of delivery. The item must be in original, unworn condition with all tags attached.",
   },
   {
     q: "Do you ship internationally?",

@@ -1,25 +1,26 @@
-import { NextRequest, NextResponse } from "next/server";
-import { commerce } from "@/lib/commerce";
-import { auth } from "@/lib/auth";
+import { NextResponse } from "next/server";
+import { createCart, FUR_HOOD_VARIANT_ID } from "@/lib/shopify";
 
-export async function POST(req: NextRequest) {
+export async function POST(req: Request) {
   try {
-    const session = await auth();
-    const { tier, color, size } = await req.json();
+    const body = await req.json();
+    const { model, fur, zipper, collar, zippyLength } = body;
 
-    const result = await commerce.createCheckout({
-      tier,
-      color,
-      size,
-      email: session?.user?.email || undefined,
-      userId: (session?.user as any)?.id || undefined,
-    });
+    const attributes = [
+      { key: "Parka Model", value: model || "" },
+      { key: "Fur Color", value: fur || "" },
+      { key: "Zipper Style", value: zipper || "" },
+      { key: "Collar Color", value: collar || "" },
+      { key: "Zippy Length (cm)", value: zippyLength || "" },
+    ];
 
-    return NextResponse.json({ url: result.url });
-  } catch (error: any) {
+    const cart = await createCart(FUR_HOOD_VARIANT_ID, attributes);
+
+    return NextResponse.json({ url: cart.checkoutUrl });
+  } catch (error) {
     console.error("Checkout error:", error);
     return NextResponse.json(
-      { error: error.message || "Internal server error" },
+      { error: "Failed to create checkout" },
       { status: 500 }
     );
   }

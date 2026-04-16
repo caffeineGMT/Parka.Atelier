@@ -1,12 +1,19 @@
 "use client";
 
-import { useState } from "react";
-import { useSession } from "next-auth/react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+
+function useShopifyLoggedIn() {
+  const [loggedIn, setLoggedIn] = useState(false);
+  useEffect(() => {
+    setLoggedIn(document.cookie.includes("shopify_logged_in=true"));
+  }, []);
+  return loggedIn;
+}
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
-  const { data: session } = useSession();
+  const loggedIn = useShopifyLoggedIn();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
@@ -28,7 +35,7 @@ export default function Nav() {
               </a>
             ))}
             <Link
-              href={session?.user ? "/account" : "/login"}
+              href={loggedIn ? "/account" : "/api/auth/login"}
               className="text-white/60 hover:text-white transition-colors"
               aria-label="Account"
             >
@@ -61,11 +68,11 @@ export default function Nav() {
                 </a>
               ))}
               <Link
-                href={session?.user ? "/account" : "/login"}
+                href={loggedIn ? "/account" : "/api/auth/login"}
                 onClick={() => setOpen(false)}
                 className="text-sm font-medium text-white/60 hover:text-white py-1"
               >
-                {session?.user ? "Account" : "Sign In"}
+                {loggedIn ? "Account" : "Sign In"}
               </Link>
             </div>
           </div>
